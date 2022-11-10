@@ -46,3 +46,9 @@ samples, guidance on mobile development, and a full API reference.
 - the card widget, sits inside a column widget, the children are pointing
   to the txList.map
 - for every tx in the txList.map, an instance of card is drawn in the app
+
+77 Building a Custom List Item
+
+- understanding what to display to the user for each card element
+- use card, with rows, columns and containers, to organise the display
+- for tx.amount and tx.txDate... add .toString() - Text must display a string
