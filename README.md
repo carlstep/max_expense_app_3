@@ -39,3 +39,10 @@ samples, guidance on mobile development, and a full API reference.
 - update main.dart to import transaction.dart file
 - in main.dart, add - final List<Transaction> txList = []; to the MyHomePage class.
 - setup dummy transaction data inside the transactions list
+
+76 Mapping Data into Widgets
+
+- setup a card, with a text widget, to return the title (tx.title)
+- the card widget, sits inside a column widget, the children are pointing
+  to the txList.map
+- for every tx in the txList.map, an instance of card is drawn in the app
