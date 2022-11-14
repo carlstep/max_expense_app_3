@@ -89,9 +89,21 @@ MY NOTES
 - Containers / Rows / Columns
   -- use them to create layouts, combine them and use their features
 
-82 Sring Interpolation
+82 String Interpolation
 
 - use the ${content}
 - remember the ‘ \ ‘ escape key, especially useful for using
   -- double or single quotation marks
   -- a dollar $ sign
+
+83 Installing External Packages & Formatting Dates
+
+- no standard function for formatting dates
+- have to use external package
+  -- intl (see pub.dev) >> is developed by dart.dev
+  -- update to the DateTime code
+  --- `DateFormat.yMMMEd().format(tx.txDate),`
+  --- toString(), is no longer needed for the date,
+  ---- intl knows to output to String format by default
+
+-- installing packages >>> update the pubspec.yaml code with the dependencies >> remember to save, this starts - pub get
