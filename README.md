@@ -107,3 +107,13 @@ MY NOTES
   ---- intl knows to output to String format by default
 
 -- installing packages >>> update the pubspec.yaml code with the dependencies >> remember to save, this starts - pub get
+
+84 DateFormat Patterns
+
+- refer to intl package, api reference
+
+85 Adding Text Input Widgets (TextField)
+
+- add area for the input fields
+- add TextButton() fields, with
+  -- style: ButtonStyle(foregroundColor: MaterialStateProperty.all(Colors.purple),
