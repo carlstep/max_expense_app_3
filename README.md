@@ -15,6 +15,8 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+MY NOTES
+
 70 - overview of project
 71 - overview of core flutter widgets
 72 - planning the app
@@ -52,3 +54,37 @@ samples, guidance on mobile development, and a full API reference.
 - understanding what to display to the user for each card element
 - use card, with rows, columns and containers, to organise the display
 - for tx.amount and tx.txDate... add .toString() - Text must display a string
+
+78 Styling a Container
+
+- add a margin inside the container
+- use BoxDecoration() to set width of border and color
+- to make the amount set to decimal places in all cases, change toString() to toStringAsFixed(2)
+
+79 Styling Text
+
+- using style / TextStyle() to update amount style
+- changing color of font
+- setting fontsize
+- setting fontweight
+
+80 More Styling
+
+- updating title aand date format and style
+
+81 Containers vs Columns vs Rows
+
+- Container >>
+  -- a single child
+  -- many alignment & styling options
+  -- flexible width ( consider the child width)
+  -- useful for custom styling and alignment
+
+- Row / Colum >>
+  -- multiple child = children
+  -- only alignment options (no styling)
+  -- always takes available height (column) and width (row)
+  -- used to layout widgets to sit next to / about each other
+
+- Containers / Rows / Columns
+  -- use them to create layouts, combine them and use their features
