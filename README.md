@@ -117,3 +117,25 @@ MY NOTES
 - add area for the input fields
 - add TextButton() fields, with
   -- style: ButtonStyle(foregroundColor: MaterialStateProperty.all(Colors.purple),
+
+86 Fetching User Input
+
+- set up function that adds a new transaction when the ‘Add Transaction’ button is pressed
+
+First Method / Option
+-- add two properties to the class, under the transaction data
+--- `String titleInput` & `String amountInput`
+--- mark the type with ? = String? titleInput
+--- to check function is working, use the print statements below inside TextButton
+onPressed: () {
+print(titleInput);
+print(amountInput);
+},
+
+Second Method / Option - preferred
+
+- inside the class initialize a TextEditingController() for each TextField - amount - title
+  - setup the controller with the TextField and reference the property
+    - titleController / amountController
+
+setting `controller` inside the `TextField` with a TextEditingController, controls the text being edited
