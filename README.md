@@ -139,3 +139,5 @@ Second Method / Option - preferred
     - titleController / amountController
 
 setting `controller` inside the `TextField` with a TextEditingController, controls the text being edited
+
+87 Splitting the App into Widgets
