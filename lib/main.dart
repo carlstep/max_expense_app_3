@@ -61,7 +61,7 @@ class MyHomePage extends StatelessWidget {
                   child: Row(
                 children: [
                   Container(
-                    width: 100,
+                    width: 110,
                     margin: const EdgeInsets.symmetric(
                       vertical: 10,
                       horizontal: 15,
@@ -74,11 +74,11 @@ class MyHomePage extends StatelessWidget {
                     ),
                     padding: const EdgeInsets.all(10),
                     child: Text(
-                      (tx.amount.toStringAsFixed(2)),
+                      ('\$ ${tx.amount.toStringAsFixed(2)}'),
                       style: const TextStyle(
                           color: Colors.purple,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20),
+                          fontSize: 18),
                     ),
                   ),
                   Column(

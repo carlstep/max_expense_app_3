@@ -88,3 +88,10 @@ MY NOTES
 
 - Containers / Rows / Columns
   -- use them to create layouts, combine them and use their features
+
+82 Sring Interpolation
+
+- use the ${content}
+- remember the ‘ \ ‘ escape key, especially useful for using
+  -- double or single quotation marks
+  -- a dollar $ sign
