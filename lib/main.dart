@@ -85,8 +85,8 @@ class MyHomePage extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      print(titleController);
-                      print(amountController);
+                      print(titleController.text);
+                      print(amountController.text);
                     },
                     child: Text('add transaction'),
                     style: ButtonStyle(

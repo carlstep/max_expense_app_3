@@ -140,4 +140,11 @@ Second Method / Option - preferred
 
 setting `controller` inside the `TextField` with a TextEditingController, controls the text being edited
 
-87 Splitting the App into Widgets
+87 Splitting the App into Widgets (refactor widgets)
+purpose is to organise the code into manageable chunks, by refectoring to widgets
+
+- create transaction_list.dart to maintain a new widget just for transactions
+- create models folder, move transaction.dart to the folder, this acts as a folder for custom types of data.
+- create widgets folder,
+
+88 Connecting Widgets and Managing State
