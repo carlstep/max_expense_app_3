@@ -159,3 +159,14 @@ purpose is to organise the code into manageable chunks, by refectoring to widget
 - update map to transactions.map
 
 88 Connecting Widgets and Managing State
+
+- add new transaction functionality
+- inside user_transaction.dart, create a new method with two properties txTitle, txAmount. build a constructor with title, amount, id, txDate.
+- setState inside \_addNewTransaction
+  -- `setState(() {_userTransactions.add(newTx);});`
+
+89 Adding User Transactions to the List
+
+- connecting ???
+
+90 Making the List Scrollable
