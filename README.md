@@ -141,10 +141,21 @@ Second Method / Option - preferred
 setting `controller` inside the `TextField` with a TextEditingController, controls the text being edited
 
 87 Splitting the App into Widgets (refactor widgets)
+
 purpose is to organise the code into manageable chunks, by refectoring to widgets
 
 - create transaction_list.dart to maintain a new widget just for transactions
-- create models folder, move transaction.dart to the folder, this acts as a folder for custom types of data.
-- create widgets folder,
+- create models folder, move transaction.dart to the folder, this acts as a folder for custom types of data. Update import location
+- create widgets folder, to hold widget specific files
+- in transaction_list.dart, create a list - `final List<Transaction> _userTransaction = [];` and move the dummy transactions from main.dart to inside the list
+- move the column with the list of transactions from main.dart to transaction_list.dart. update the import packages
+- update main.dart with the widget, TransactionList()
+- CREATES ISSUE - transaction data is inside transaction_list.dart but the trigger to add new data is inside main.data. HOW TO CONNECT THE DATA? - LIFTING STATE UP
+- create two new widgets - new_transaction.dart / user_transaction.dart - using these new widgets will allow us to remove unnecessary complexity from the main.dart file.
+- remove card widget (has the fields for inputting data) and place inside new_transaction.dart and add the TextEditingController() properties. t
+- user_transactions.dart - create stf widget. create Column with NewTransaction() and TransactonList() - update the imports
+
+- in transaction_list.dart, to receive the transactions from user_transactions, declare `final List<Transaction> transactions;` inside the Stl widget of transaction_list.dart, create a constructor `TransactionList(this.transactions);` to pass data from the parent widget `user_transactions.dart` to child widget `transaction_list.dart`.
+- update map to transactions.map
 
 88 Connecting Widgets and Managing State
