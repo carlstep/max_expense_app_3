@@ -161,7 +161,7 @@ purpose is to organise the code into manageable chunks, by refectoring to widget
 88 Connecting Widgets and Managing State
 
 - add new transaction functionality
-- inside user_transaction.dart, create a new method with two properties txTitle, txAmount. build a constructor with title, amount, id, txDate.
+- inside user_transaction.dart, create a new method with two properties txTitle, txAmount. build a constructor with title, amount, id, txDatestte.
 - setState inside \_addNewTransaction
   -- `setState(() {_userTransactions.add(newTx);});`
 
@@ -170,3 +170,7 @@ purpose is to organise the code into manageable chunks, by refectoring to widget
 - connecting ???
 
 90 Making the List Scrollable
+content (list of transactions) on main.dart is not scrollable
+
+- in main.dart, wrap the column, with the UserTransactions(), with a SingleChildScrollView widget. this creates a box for items within to scroll. THIS ALLOWS THE ITEMS AND THE ENTRY FORM TO SCROLL.
+- in transaction_list.dart, wrap the highest level column() with a container() widget, set the height to 400, then wrap the column() with a SingleChildScroView widget. this will ensure the list is scrollable, but the form will not.
