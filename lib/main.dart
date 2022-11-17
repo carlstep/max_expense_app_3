@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import './widgets/new_transaction.dart';
 
-import 'package:intl/intl.dart';
-
-import './transaction.dart';
+import './widgets/transaction_list.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,30 +18,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final List<Transaction> txList = [
-    Transaction(
-      id: 't1',
-      title: 'new coat',
-      amount: 55.60,
-      txDate: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'lunch',
-      amount: 5.75,
-      txDate: DateTime.now(),
-    ),
-    Transaction(
-      id: 't3',
-      title: 'flight',
-      amount: 133.90,
-      txDate: DateTime.now(),
-    ),
-  ];
-
-  // String? titleInput;
-  // String? amountInput;
-
   final titleController = TextEditingController();
   final amountController = TextEditingController();
 
@@ -62,88 +37,6 @@ class MyHomePage extends StatelessWidget {
               color: Colors.lightBlue,
               child: Text('Chart Placeholder'),
             ),
-          ),
-          Card(
-            elevation: 5,
-            child: Container(
-              margin: EdgeInsets.all(4),
-              padding: EdgeInsets.all(12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  TextField(
-                    controller: titleController,
-                    // onChanged: (value) {
-                    //   titleInput = value;
-                    // },
-                    decoration: InputDecoration(labelText: 'enter title'),
-                  ),
-                  TextField(
-                    controller: amountController,
-                    //onChanged: (value) => amountInput = value,
-                    decoration: InputDecoration(labelText: 'enter amount'),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      print(titleController.text);
-                      print(amountController.text);
-                    },
-                    child: Text('add transaction'),
-                    style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all(Colors.purple),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Column(
-            children: txList.map((tx) {
-              return Card(
-                  child: Row(
-                children: [
-                  Container(
-                    width: 110,
-                    margin: const EdgeInsets.symmetric(
-                      vertical: 10,
-                      horizontal: 15,
-                    ),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        width: 2,
-                        color: Colors.purple,
-                      ),
-                    ),
-                    padding: const EdgeInsets.all(8),
-                    child: Text(
-                      ('\$ ${tx.amount.toStringAsFixed(2)}'),
-                      style: const TextStyle(
-                          color: Colors.purple,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18),
-                    ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        tx.title,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                      ),
-                      Text(
-                        DateFormat.yMMMEd().format(tx.txDate),
-                        style: const TextStyle(
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ));
-            }).toList(),
           ),
         ],
       ),

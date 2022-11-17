@@ -1,3 +1,5 @@
+/// this file serves as a model for data
+
 class Transaction {
   final String id;
   final String title;
