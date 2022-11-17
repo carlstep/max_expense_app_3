@@ -174,3 +174,13 @@ content (list of transactions) on main.dart is not scrollable
 
 - in main.dart, wrap the column, with the UserTransactions(), with a SingleChildScrollView widget. this creates a box for items within to scroll. THIS ALLOWS THE ITEMS AND THE ENTRY FORM TO SCROLL.
 - in transaction_list.dart, wrap the highest level column() with a container() widget, set the height to 400, then wrap the column() with a SingleChildScroView widget. this will ensure the list is scrollable, but the form will not.
+
+91 Working with ListViews
+
+an alternative solution to wrapping transaction.map column with a SingleChilScrollView widget is to use ListView
+
+replace Column() of transactions.map with ListView()
+
+becareful of `viewport`, ListView has an infinite height because the number of items are unknown. Wrapping the ListView with a container, and set height, gives the ListView a height.
+
+have two options - ListView(children: []), and wrapped with Container() or ListView.builder(). ListView.builder will only load what is visible. Should be used for long lists and lists of unknown length.
