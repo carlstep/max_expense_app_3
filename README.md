@@ -216,3 +216,8 @@ show a Modal Bottom Sheet when either the FAB or AppBar button is pressed. The s
 !! lots more to review on lesson 94
 
 95 Improving & Styling Modal Bottom Sheet
+data getting lost!!
+
+- change `NewTransaction` in new_transaction.dart to a StatefulWidget
+- widget. ??
+- add `Navigator.of(context).pop();` to the submitData() method, this will add functionality to close the modal sheet when 'add transaction' is tapped
