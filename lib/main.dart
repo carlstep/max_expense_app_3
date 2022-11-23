@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:max_expense_app_3/widgets/transaction_list.dart';
 
-import './widgets/user_transactions.dart';
+import './widgets/new_transaction.dart';
+import './models/transaction.dart';
+import './widgets/transaction_list.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,9 +19,57 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  final titleController = TextEditingController();
-  final amountController = TextEditingController();
+class MyHomePage extends StatefulWidget {
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  final List<Transaction> _userTransactions = [
+    Transaction(
+      id: 't1',
+      title: 'new coat',
+      amount: 55.60,
+      txDate: DateTime.now(),
+    ),
+    Transaction(
+      id: 't2',
+      title: 'lunch',
+      amount: 5.75,
+      txDate: DateTime.now(),
+    ),
+    Transaction(
+      id: 't3',
+      title: 'flight',
+      amount: 133.90,
+      txDate: DateTime.now(),
+    ),
+  ];
+
+  void _addNewTransaction(String txTitle, double txAmount) {
+    final newTx = Transaction(
+      title: txTitle,
+      amount: txAmount,
+      id: DateTime.now().toString(),
+      txDate: DateTime.now(),
+    );
+
+    setState(() {
+      _userTransactions.add(newTx);
+    });
+  }
+
+  void _startAddNewTransaction(BuildContext ctx) {
+    showModalBottomSheet(
+        context: ctx,
+        builder: (_) {
+          return GestureDetector(
+            onTap: () {},
+            child: NewTransaction(_addNewTransaction),
+            behavior: HitTestBehavior.opaque,
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +78,7 @@ class MyHomePage extends StatelessWidget {
         title: const Text('Flutter App'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () => _startAddNewTransaction(context),
             icon: Icon(
               Icons.add,
               size: 32,
@@ -47,7 +98,7 @@ class MyHomePage extends StatelessWidget {
                 child: Text('Chart Placeholder'),
               ),
             ),
-            UserTransactions(),
+            TransactionList(_userTransactions)
           ],
         ),
       ),
@@ -55,7 +106,7 @@ class MyHomePage extends StatelessWidget {
           FloatingActionButtonLocation.miniCenterDocked,
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () => _startAddNewTransaction(context),
       ),
     );
   }

@@ -207,3 +207,12 @@ add a button to the action bar and a FAB
 
 - inside AppBar, add `actions`, then IconButton
 - outside of SingleChildScrollView, add `floatingActionButton`, then FloatingActionButton. FloatingActionButtonLocation can be set
+
+94 Showing a Modal Bottom Sheet
+show a Modal Bottom Sheet when either the FAB or AppBar button is pressed. The sheet with contain the Transaction Data.
+
+- create a method, inside the main.dart file, under the MyHomePage class - `void startAddNewTransaction()`. call the function `showModalBottomSheet`, which is a function available with flutter, this has a context and builder.
+
+!! lots more to review on lesson 94
+
+95 Improving & Styling Modal Bottom Sheet
