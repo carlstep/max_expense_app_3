@@ -201,3 +201,9 @@ have two options - ListView(children: []), and wrapped with Container() or ListV
   `onPressed: submitData,`
 
 if the buttons are pressed before values for title and amount have been entered, use if statement in the submitData() function
+
+93 AppBar Buttons & FAB
+add a button to the action bar and a FAB
+
+- inside AppBar, add `actions`, then IconButton
+- outside of SingleChildScrollView, add `floatingActionButton`, then FloatingActionButton. FloatingActionButtonLocation can be set
