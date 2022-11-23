@@ -184,3 +184,20 @@ replace Column() of transactions.map with ListView()
 becareful of `viewport`, ListView has an infinite height because the number of items are unknown. Wrapping the ListView with a container, and set height, gives the ListView a height.
 
 have two options - ListView(children: []), and wrapped with Container() or ListView.builder(). ListView.builder will only load what is visible. Should be used for long lists and lists of unknown length.
+
+92 Input & Output styling
+
+- enter numbers with a number keyboard
+- trigger 'add transaction' when done is clicked
+- always see 2 digits
+
+- use `keyboardType: TextInputType.number` - this brings up a number keyboard. Using - keyboardType: `TextInputType.numberWithOptions(decimal: true)` brings up the number keyboard with a decimal (.) option
+
+- use onSubmitted with a function
+  create a new function `void submitData() {}`
+  inside the brackets call a method `addTx`
+  call submitData in the TextField for title and amount, using - `onSubmitted: (_) => submitData()`,
+  and also call submitData on the TextButton -
+  `onPressed: submitData,`
+
+if the buttons are pressed before values for title and amount have been entered, use if statement in the submitData() function
