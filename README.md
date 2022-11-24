@@ -220,4 +220,26 @@ data getting lost!!
 
 - change `NewTransaction` in new_transaction.dart to a StatefulWidget
 - widget. ??
-- add `Navigator.of(context).pop();` to the submitData() method, this will add functionality to close the modal sheet when 'add transaction' is tapped
+- add `Navigator.of(context).pop();` to the submitData() method, this will add functionality to close the modal sheet when 'add transaction' is tapped.
+
+96 Configuring & Using Themes
+app doesn't have any uniform style, colors, fonts.
+have to change colors manually
+
+The way to set theme has changed since Max's course
+
+- for app Colors - inside MaterialApp, set theme:
+  -- ThemeData(
+  --- colorScheme: Theme.of(context).colorScheme.copyWith(
+  ---- primary: Colors.blueGrey,
+  ---- secondary: Colors.green[800],),)
+- within the widgets, set `color: Theme.of(context).colorScheme.primary,` or `color: Theme.of(context).colorScheme.secondary,`
+- for text Colors - inside MaterialApp, set theme:
+  -- textTheme: TextTheme(
+  --- headline3: TextStyle(
+  ---- color: Colors.deepPurple,
+  ---- fontSize: 20,
+  ---- fontWeight: FontWeight.bold),)
+- within the widgets set `style: Theme.of(context).textTheme.headline3,`
+
+97 Custom fonts & Text Themes
