@@ -253,3 +253,13 @@ display the note and image to user or show the transactions
 
 - create if / else condition for the transactions
   -- `transactions.isEmpty ? (do this - display image and text) : (else, do this - return a list of transactions)`.
+
+100 planning the chart widget
+how to structure the chart? what rows / columns / containers are required.
+
+- create widget - chart.dart
+- this will be a stateless widget
+- set-up the initial structure
+  -- return a card
+
+101 looping through lists
