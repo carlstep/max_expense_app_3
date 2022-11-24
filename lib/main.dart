@@ -22,16 +22,28 @@ class MyApp extends StatelessWidget {
             ),
         textTheme: const TextTheme(
           headline3: TextStyle(
+              fontFamily: 'OpenSans',
               color: Colors.deepPurple,
               fontSize: 20,
               fontWeight: FontWeight.bold),
           headline4: TextStyle(
+              fontFamily: 'Quicksand',
               color: Colors.blueGrey,
               fontSize: 20,
+              letterSpacing: .5,
               fontWeight: FontWeight.bold),
           headline5: TextStyle(
+            fontFamily: 'Quicksand',
             color: Colors.blueGrey,
             fontSize: 16,
+          ),
+        ),
+        appBarTheme: const AppBarTheme(
+          titleTextStyle: TextStyle(
+            color: Colors.amber,
+            fontFamily: 'OpenSans',
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
@@ -96,7 +108,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Personal Expenses'),
+        title: const Text(
+          'Personal Expenses',
+        ),
         actions: [
           IconButton(
             onPressed: () => _startAddNewTransaction(context),

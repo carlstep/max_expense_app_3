@@ -234,6 +234,11 @@ The way to set theme has changed since Max's course
   ---- primary: Colors.blueGrey,
   ---- secondary: Colors.green[800],),)
 - within the widgets, set `color: Theme.of(context).colorScheme.primary,` or `color: Theme.of(context).colorScheme.secondary,`
+
+97 Custom fonts & Text Themes
+load fonts into an assets folder
+update pubspec.yaml to reference fontfamily and different font styles
+
 - for text Colors - inside MaterialApp, set theme:
   -- textTheme: TextTheme(
   --- headline3: TextStyle(
@@ -241,5 +246,3 @@ The way to set theme has changed since Max's course
   ---- fontSize: 20,
   ---- fontWeight: FontWeight.bold),)
 - within the widgets set `style: Theme.of(context).textTheme.headline3,`
-
-97 Custom fonts & Text Themes
