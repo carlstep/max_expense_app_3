@@ -263,3 +263,4 @@ how to structure the chart? what rows / columns / containers are required.
   -- return a card
 
 101 looping through lists
+how to extract the data (day / amount) for past 7 days
