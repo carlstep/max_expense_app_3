@@ -246,3 +246,10 @@ update pubspec.yaml to reference fontfamily and different font styles
   ---- fontSize: 20,
   ---- fontWeight: FontWeight.bold),)
 - within the widgets set `style: Theme.of(context).textTheme.headline3,`
+
+99 Adding Images to the App
+if now transactions are listed, will need to show a note, and image to user.
+display the note and image to user or show the transactions
+
+- create if / else condition for the transactions
+  -- `transactions.isEmpty ? (do this - display image and text) : (else, do this - return a list of transactions)`.
