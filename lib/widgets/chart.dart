@@ -22,11 +22,11 @@ class Chart extends StatelessWidget {
           totalSum += recentTransactions[i].amount;
         }
       }
-      print(DateFormat.E().format(weekDay));
+      print(DateFormat.E().format(weekDay).substring(0, 1));
       print(totalSum);
 
       return {
-        'day': DateFormat.E().format(weekDay),
+        'day': DateFormat.E().format(weekDay).substring(0, 1),
         'amount': totalSum,
       };
     });
@@ -39,9 +39,9 @@ class Chart extends StatelessWidget {
       elevation: 6,
       margin: EdgeInsets.all(20),
       child: Row(
-        children: [
-          Column(),
-        ],
+        children: groupedTransactionValues.map((data) {
+          return Text('${data['day']}: ${data['amount']}');
+        }).toList(),
       ),
     );
   }
