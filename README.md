@@ -264,3 +264,9 @@ how to structure the chart? what rows / columns / containers are required.
 
 101 looping through lists
 how to extract the data (day / amount) for past 7 days
+??
+for loop (var i = 0; i < recentTransactions.length; i++)
+
+103 getting Recent Transactions
+wire up the chart widget
+display the chart in
