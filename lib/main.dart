@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
           textStyle: Theme.of(context).textTheme.headline5,
         )),
         textButtonTheme: TextButtonThemeData(
+            // TODO - button theme
             style: TextButton.styleFrom(
           textStyle: Theme.of(context).textTheme.headline5,
           backgroundColor: Colors.amber,
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         colorScheme: Theme.of(context).colorScheme.copyWith(
               primary: Colors.blueGrey,
               secondary: Colors.amber[600],
+              //TODO - error color
             ),
         textTheme: const TextTheme(
           headline3: TextStyle(
@@ -125,6 +127,12 @@ class _MyHomePageState extends State<MyHomePage> {
         });
   }
 
+  void _deleteTransaction(String id) {
+    setState(() {
+      _userTransactions.removeWhere((tx) => tx.id == id);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -148,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Chart(_recentTransactions),
-            TransactionList(_userTransactions),
+            TransactionList(_userTransactions, _deleteTransaction),
           ],
         ),
       ),
