@@ -17,21 +17,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Personal Expenses',
       theme: ThemeData(
-        elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-          textStyle: Theme.of(context).textTheme.headline5,
-        )),
-        textButtonTheme: TextButtonThemeData(
-            // TODO - button theme
-            style: TextButton.styleFrom(
-          textStyle: Theme.of(context).textTheme.headline5,
-          backgroundColor: Colors.amber,
-        )),
         colorScheme: Theme.of(context).colorScheme.copyWith(
               primary: Colors.blueGrey,
               secondary: Colors.amber[600],
               //TODO - error color
             ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: Colors.amber[600],
+          ),
+        ),
         textTheme: const TextTheme(
           headline3: TextStyle(
               fontFamily: 'OpenSans',
@@ -41,14 +36,20 @@ class MyApp extends StatelessWidget {
           headline4: TextStyle(
               fontFamily: 'Quicksand',
               color: Colors.blueGrey,
-              fontSize: 20,
+              fontSize: 22,
               letterSpacing: .5,
               fontWeight: FontWeight.bold),
           headline5: TextStyle(
-              fontFamily: 'Quicksand',
-              color: Colors.blueGrey,
-              fontSize: 12,
-              fontWeight: FontWeight.bold),
+            fontFamily: 'Quicksand',
+            color: Colors.blueGrey,
+            fontSize: 18,
+          ),
+          headline6: TextStyle(
+            fontFamily: 'Quicksand',
+            color: Colors.blueGrey,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(

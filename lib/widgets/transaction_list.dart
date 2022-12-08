@@ -48,18 +48,22 @@ class TransactionList extends StatelessWidget {
                     margin: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
                     child: ListTile(
                       leading: CircleAvatar(
-                        // TODO - circle avatar color/theme
                         radius: 30,
-                        backgroundColor: Theme.of(context).primaryColor,
+                        backgroundColor:
+                            Theme.of(context).colorScheme.secondary,
                         child: Padding(
                           padding: const EdgeInsets.all(4.0),
                           child: FittedBox(
-                              child: Text('\$${transactions[index].amount}')),
+                            child: Text(
+                              '\$${transactions[index].amount}',
+                              style: Theme.of(context).textTheme.headline6,
+                            ),
+                          ),
                         ),
                       ),
                       title: Text(
                         transactions[index].title,
-                        style: Theme.of(context).textTheme.headline3,
+                        style: Theme.of(context).textTheme.headline4,
                       ),
                       subtitle: Text(
                         DateFormat.yMMMEd().format(transactions[index].txDate),
@@ -68,7 +72,7 @@ class TransactionList extends StatelessWidget {
                       trailing: IconButton(
                         icon: Icon(Icons.delete),
                         onPressed: () => deleteTx(transactions[index].id),
-                        color: Theme.of(context).errorColor,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ),
                   ),

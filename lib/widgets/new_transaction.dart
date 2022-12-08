@@ -92,6 +92,7 @@ class _NewTransactionState extends State<NewTransaction> {
                     onPressed: _presentDatePicker,
                     child: Text(
                       'Select Date',
+                      style: Theme.of(context).textTheme.headline6,
                     ),
                   ),
                 ],
@@ -101,6 +102,7 @@ class _NewTransactionState extends State<NewTransaction> {
               onPressed: _submitData,
               child: Text(
                 'Add Transaction',
+                style: Theme.of(context).textTheme.headline6,
               ),
             ),
           ],
