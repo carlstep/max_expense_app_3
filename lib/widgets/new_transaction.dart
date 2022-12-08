@@ -59,21 +59,19 @@ class _NewTransactionState extends State<NewTransaction> {
               child: Row(
                 children: [
                   Text('No Date Selected'),
-                  TextButton(
+                  ElevatedButton(
                     onPressed: (() {}),
                     child: Text(
                       'Select Date',
-                      style: Theme.of(context).textTheme.headline4,
                     ),
                   ),
                 ],
               ),
             ),
-            TextButton(
+            ElevatedButton(
               onPressed: submitData,
               child: Text(
-                'add transaction',
-                style: Theme.of(context).textTheme.headline4,
+                'Add Transaction',
               ),
             ),
           ],
