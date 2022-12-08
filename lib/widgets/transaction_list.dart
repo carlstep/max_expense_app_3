@@ -48,6 +48,7 @@ class TransactionList extends StatelessWidget {
                     child: ListTile(
                       leading: CircleAvatar(
                         radius: 30,
+                        backgroundColor: Theme.of(context).primaryColor,
                         child: Padding(
                           padding: const EdgeInsets.all(4.0),
                           child: FittedBox(
@@ -56,10 +57,11 @@ class TransactionList extends StatelessWidget {
                       ),
                       title: Text(
                         transactions[index].title,
-                        style: Theme.of(context).textTheme.titleLarge,
+                        style: Theme.of(context).textTheme.headline3,
                       ),
                       subtitle: Text(
                         DateFormat.yMMMEd().format(transactions[index].txDate),
+                        style: Theme.of(context).textTheme.headline5,
                       ),
                     ),
                   ),

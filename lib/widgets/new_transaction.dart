@@ -54,12 +54,27 @@ class _NewTransactionState extends State<NewTransaction> {
               decoration: const InputDecoration(labelText: 'enter amount'),
               onSubmitted: (_) => submitData(),
             ),
+            Container(
+              height: 70,
+              child: Row(
+                children: [
+                  Text('No Date Selected'),
+                  TextButton(
+                    onPressed: (() {}),
+                    child: Text(
+                      'Select Date',
+                      style: Theme.of(context).textTheme.headline4,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             TextButton(
               onPressed: submitData,
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all(Colors.purple),
+              child: Text(
+                'add transaction',
+                style: Theme.of(context).textTheme.headline4,
               ),
-              child: const Text('add transaction'),
             ),
           ],
         ),

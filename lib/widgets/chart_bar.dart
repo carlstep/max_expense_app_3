@@ -15,9 +15,12 @@ class ChartBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        FittedBox(
-          child: Text(
-            '\$${spendingAmount.toStringAsFixed(0)}',
+        Container(
+          height: 20,
+          child: FittedBox(
+            child: Text(
+              '\$${spendingAmount.toStringAsFixed(0)}',
+            ),
           ),
         ),
         SizedBox(
@@ -42,7 +45,7 @@ class ChartBar extends StatelessWidget {
                 heightFactor: spendingPctOfTotal,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).colorScheme.secondary,
                     borderRadius: BorderRadius.circular(5),
                   ),
                 ),
@@ -52,6 +55,15 @@ class ChartBar extends StatelessWidget {
         ),
         SizedBox(
           height: 4,
+        ),
+        Container(
+          height: 20,
+          child: FittedBox(
+            child: Text(
+              label,
+              style: Theme.of(context).textTheme.headline5,
+            ),
+          ),
         ),
       ],
     );
