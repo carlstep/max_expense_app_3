@@ -54,58 +54,65 @@ class _NewTransactionState extends State<NewTransaction> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 5,
-      child: Container(
-        margin: const EdgeInsets.all(4),
-        padding: const EdgeInsets.all(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            TextField(
-              controller: _titleController,
-              // onChanged: (value) {
-              //   titleInput = value;
-              // },
-              decoration: const InputDecoration(labelText: 'enter title'),
-              onSubmitted: (_) => _submitData(),
-            ),
-            TextField(
-              controller: _amountController,
-              keyboardType: TextInputType.numberWithOptions(decimal: true),
-              //onChanged: (value) => amountInput = value,
-              decoration: const InputDecoration(labelText: 'enter amount'),
-              onSubmitted: (_) => _submitData(),
-            ),
-            Container(
-              height: 70,
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      _selectedDate == null
-                          ? 'No Date Selected'
-                          : 'Selected Date: ${DateFormat.yMd().format(_selectedDate!).toString()}',
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: _presentDatePicker,
-                    child: Text(
-                      'Select Date',
-                      style: Theme.of(context).textTheme.headline6,
-                    ),
-                  ),
-                ],
+    return SingleChildScrollView(
+      child: Card(
+        elevation: 5,
+        child: Container(
+          //margin: const EdgeInsets.all(4),
+          padding: EdgeInsets.only(
+            top: 10,
+            left: 10,
+            right: 10,
+            bottom: MediaQuery.of(context).viewInsets.bottom + 10.0,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              TextField(
+                controller: _titleController,
+                // onChanged: (value) {
+                //   titleInput = value;
+                // },
+                decoration: const InputDecoration(labelText: 'enter title'),
+                onSubmitted: (_) => _submitData(),
               ),
-            ),
-            ElevatedButton(
-              onPressed: _submitData,
-              child: Text(
-                'Add Transaction',
-                style: Theme.of(context).textTheme.headline6,
+              TextField(
+                controller: _amountController,
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                //onChanged: (value) => amountInput = value,
+                decoration: const InputDecoration(labelText: 'enter amount'),
+                onSubmitted: (_) => _submitData(),
               ),
-            ),
-          ],
+              Container(
+                height: 70,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        _selectedDate == null
+                            ? 'No Date Selected'
+                            : 'Selected Date: ${DateFormat.yMd().format(_selectedDate!).toString()}',
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: _presentDatePicker,
+                      child: Text(
+                        'Select Date',
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              ElevatedButton(
+                onPressed: _submitData,
+                child: Text(
+                  'Add Transaction',
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
